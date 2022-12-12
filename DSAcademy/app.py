@@ -44,11 +44,11 @@ def signUp():
 
                     if len(data) is 0:
                         conn.commit()
-                        return json.dumps({'message':'User criado com sucesso!'})
+                        return json.dumps({'message':'User created sucessfully!'})
                     else:
                         return json.dumps({'error':str(data[0])})
         else:
-            return json.dumps({'html':'<span>preencha os campos requeridos</span>'})
+            return json.dumps({'html':'<span>fill in the required fields</span>'})
 
     except Exception as e:
         return json.dumps({'error':str(e)})
