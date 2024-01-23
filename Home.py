@@ -67,12 +67,15 @@ st.markdown("""
     .st-emotion-cache-fblp2m {
             color: white
             }
+    .st-emotion-cache-1pbsqtx {
+            color: white
+            }
     .st-emotion-cache-lobgos {
             border-radius: 10px;
             border-style: solid;
             border-width: 1px;
             border-color: white;
-    }
+            }
     .st-emotion-cache-pkbazv {
             color: white;
             }
@@ -253,4 +256,4 @@ hide_st_style = """
     header {visibility: hidden;}
     </style>
 """
-# st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
