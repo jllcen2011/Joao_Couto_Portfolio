@@ -4,4 +4,3 @@ Pillow
 Requests
 streamlit_lottie
 streamlit_timeline
-base64
