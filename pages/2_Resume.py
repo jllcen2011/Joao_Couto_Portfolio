@@ -22,6 +22,12 @@ st.markdown("""
     .st-emotion-cache-1dtefog {
             color: white
             }
+    .st-emotion-cache-1hf5x7j {
+            background-color: #bedb8a
+            }
+    .st-emotion-cache-1d3srhg p {
+            color: white
+            }
     .st-emotion-cache-fblp2m {
             color: white
             }
@@ -61,7 +67,7 @@ def create_circular_image(path, corner_offset=(100, -50)):
 logotipo = create_circular_image('Imagens/foto2.jpeg')
 st.sidebar.image(logotipo)
 
-# -------------- sidebar links to linkedin and github ------------#
+# links to linkedin and github
 st.sidebar.markdown("""""")
 st.sidebar.markdown("""""")
 st.sidebar.markdown("""""")
@@ -94,10 +100,26 @@ with st.container():
 ############################# Main #########################
 st.title("📝 Resume")
 
-# st.write("[Click here if it's blocked by your browser](https://cognitiveclass.ai/)")
+st.write("Click here if it's blocked by your browser: ")
+
+# File path to your PDF
+pdf_file_path = "Imagens/resume.pdf"
+
+# Set a label for the download button and the file name for the downloaded file
+download_button_label = "Download Resume"
+downloaded_file_name = "João Couto CV.pdf"
+
+# Read the PDF file in binary mode
+with open(pdf_file_path, "rb") as pdf_file:
+    pdf_bytes = pdf_file.read()
+
+# Create a download button and offer the PDF for download
+st.download_button(label=download_button_label,
+                   data=pdf_bytes,
+                   file_name=downloaded_file_name,
+                   mime="application/octet-stream")
 
 with open("Imagens/resume.pdf","rb") as f:
       base64_pdf = base64.b64encode(f.read()).decode('utf-8')
       pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="1000mm" height="1000mm" type="application/pdf"></iframe>'
       st.markdown(pdf_display, unsafe_allow_html=True)
-  
