@@ -61,6 +61,36 @@ def create_circular_image(path, corner_offset=(100, -50)):
 logotipo = create_circular_image('Imagens/foto2.jpeg')
 st.sidebar.image(logotipo)
 
+# -------------- sidebar links to linkedin and github ------------#
+st.sidebar.markdown("""""")
+st.sidebar.markdown("""""")
+st.sidebar.markdown("""""")
+st.sidebar.markdown("""""")
+st.sidebar.markdown("""""")
+st.sidebar.markdown("""""")
+
+def get_image_as_base64(path):
+    with open(path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+# Encode your images
+linkedin_image_base64 = get_image_as_base64("Imagens/linkedin_logo.png")
+github_image_base64 = get_image_as_base64("Imagens/github_logo.png")
+
+# URLs
+linkedin_url = "https://www.linkedin.com/in/joaocouto1990/"
+github_url = "https://github.com/jllcen2011?tab=repositories"
+
+# HTML for clickable images
+linkedin_html = f'<a href="{linkedin_url}" target="_blank"><img src="data:image/png;base64,{linkedin_image_base64}" width="40px"></a>'
+github_html = f'<a href="{github_url}" target="_blank"><img src="data:image/png;base64,{github_image_base64}" width="40px"></a>'
+
+# Use markdown to display HTML
+with st.container():
+    col15, col16, col17, col18 = st.sidebar.columns([0.3, 0.2, 0.2, 0.3])
+    col16.markdown(linkedin_html, unsafe_allow_html=True)
+    col17.markdown(github_html, unsafe_allow_html=True)
+
 ############################# Main #########################
 st.title("📝 Resume")
 
