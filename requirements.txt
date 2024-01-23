@@ -1,2 +1,6 @@
 pandas
 streamlit
+Pillow
+Requests
+streamlit_lottie
+streamlit_timeline
