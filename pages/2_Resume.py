@@ -123,3 +123,15 @@ with open("Imagens/resume.pdf","rb") as f:
       base64_pdf = base64.b64encode(f.read()).decode('utf-8')
       pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="1000mm" height="1000mm" type="application/pdf"></iframe>'
       st.markdown(pdf_display, unsafe_allow_html=True)
+
+
+  # -------------- header and footer ---------------- #
+# Retirando a fita colorida na parte de cima do streamlit e o rodapé escrito Made with Streamlit
+hide_st_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
