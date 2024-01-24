@@ -72,8 +72,6 @@ st.sidebar.markdown("""""")
 st.sidebar.markdown("""""")
 st.sidebar.markdown("""""")
 st.sidebar.markdown("""""")
-st.sidebar.markdown("""""")
-st.sidebar.markdown("""""")
 
 def get_image_as_base64(path):
     with open(path, "rb") as img_file:
